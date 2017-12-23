@@ -11,3 +11,4 @@ w3.modal = {
     });
   }
 };
+w3.registerInitializator(w3.modal.init);
