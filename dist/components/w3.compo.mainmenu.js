@@ -44,4 +44,4 @@ w3.mainmenu = {
     return w3;
   }
 };
-w3.registerInitializator(w3.mainmenu.init);
+w3.registerInitializer(function(){ w3.mainmenu.init(); });
