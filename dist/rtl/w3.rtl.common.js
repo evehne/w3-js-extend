@@ -1,6 +1,4 @@
 "use strict";
-w3.initializers = new Array();
-
 w3.isObject = function(aRt){ return aRt instanceof Object && aRt.constructor === Object; };
 
 w3.isArray = function(aRt){ return aRt instanceof Object && aRt.constructor === Array; };
@@ -22,5 +20,4 @@ w3.sstClear = function(){ switch(arguments.length){ case 0: return sessionStorag
 w3.lst      = function(){ switch(arguments.length){ case 1: return localStorage.getItem(arguments[0]); break; case 2: localStorage.setItem(arguments[0], arguments[1]); return w3; break;}};
 w3.lstClear = function(){ switch(arguments.length){ case 0: return localStorage.clear(); break; case 1: localStorage.removeItem(arguments[0]); return w3; break;}};
 
-w3.registerInitializator = function(aFn){ w3.initializers.push( aFn ); return w3; };
-w3.initialize = function(){var i, fn, l = w3.initializers.length;for(i=0; i<l; i++){fn = w3.initializers[i](); if(w3.isFunction(fn)){fn();}}}
+w3.registerInitializer = function(aFn){ w3.on(window, 'load', aFn); };
