@@ -1,9 +1,16 @@
+/**
+ * @file    w3.rtl.events.js
+ * @version 1.7.1221
+ * @author  Deefaze
+ *
+ */
 "use strict";
 
 w3.on = function(aSe, aEv, aFn){ return w3.onElements(w3.getElements(aSe), aEv, aFn); };
 w3.removeEvent = function(aSe, aEv, aFn){ return w3.removeEventElements(w3.getElements(aSe), aFn); };
 
 // NB : https://developer.mozilla.org/fr/docs/Web/Events
+// NB : https://developer.mozilla.org/en-US/docs/Web/Events
 const On = {
   css : {
     animation : {
@@ -40,7 +47,9 @@ const On = {
     start : 'touchstart'
   }
 };
+/* ------------------------------------------------------------ */
 Object.freeze(On);
+
 w3.onElements = function(aEls, aEv, aFn)
 {
   var i, l = aEls.length;
