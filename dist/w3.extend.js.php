@@ -1,7 +1,7 @@
 <?php
 namespace w3\config\rtl
 {
-  const renderin = false;
+  const renderin = true;
   const ignore   = false;
 
   const folder   = '.' . DIRECTORY_SEPARATOR . 'rtl' . DIRECTORY_SEPARATOR;
@@ -17,12 +17,13 @@ namespace w3\config\rtl
 
 namespace w3\config\components
 {
-  const renderin = false;
+  const renderin = true;
   const ignore   = false;
 
   const folder   = '.' . DIRECTORY_SEPARATOR . 'components' . DIRECTORY_SEPARATOR;
   const files    = [
     'w3.compo.mainmenu.js',
+    'w3.compo.modal.js',
   ];
 
   const compress = false;
