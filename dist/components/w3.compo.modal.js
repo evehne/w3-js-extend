@@ -9,6 +9,7 @@ w3.modal = {
       var target = w3.getAttr(this, 'ui-modal-target');
       w3.hide(target);
     });
+    return w3;
   }
 };
-w3.registerInitializator(w3.modal.init);
+w3.registerInitializer(function(){ w3.modal.init(); });
