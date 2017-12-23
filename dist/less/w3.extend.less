@@ -1,0 +1,58 @@
+// out: ../w3.extend.css
+
+@bkg-overlay-color : rgba(0,0,0,0.92);
+
+.w3-modal
+{
+  z-index:10;
+  background-color: @bkg-overlay-color;
+}
+
+[ui-main-sidebar]
+{
+  &[ui-state="close"]
+  {
+    transition: all 1s ease-out;
+    opacity: 1;
+    transform: translate(0px);
+    display: block;
+  }
+  &[ui-state="open"]
+  {
+    transition: all .5s ease-in;
+    opacity: 1;
+    transform: translate(0px);
+    display: block;
+  }
+}
+
+[ui-main-sidebar-overlay]
+{
+  background-color: @bkg-overlay-color;
+  &[ui-state="close"]
+  {
+    transition: all .5s ease-out;
+    opacity: 0;
+    display: none;
+  }
+  &[ui-state="open"]
+  {
+    transition: all .5s .5s ease-in;
+    display: none;
+    opacity: 0;
+  }
+}
+@media (max-width: 992px)
+{
+  [ui-main-sidebar][ui-state="close"]
+  {
+    opacity: 0;
+    transform: translate(-500px);
+    display: block;
+  }
+  [ui-main-sidebar-overlay][ui-state="open"]
+  {
+    display: block;
+    opacity: 1;
+  }
+}
